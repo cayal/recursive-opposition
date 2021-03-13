@@ -2,7 +2,7 @@ use nannou::prelude::*;
 
 struct Model {
     _window: window::Id,
-    split: usize
+    split: usize,
 }
 
 fn main() {
@@ -22,22 +22,10 @@ fn view(_app: &App, _model: &Model, _frame: Frame) {
     let win = _app.window_rect();
     if _model.split == 1 {
         let rs = win.subdivisions();
-        draw.rect()
-            .xy(rs[0].xy())
-            .wh(rs[0].wh())
-            .color(BLACK);
-        draw.rect()
-            .xy(rs[2].xy())
-            .wh(rs[2].wh())
-            .color(BLACK);
-        draw.rect()
-            .xy(rs[1].xy())
-            .wh(rs[1].wh())
-            .color(WHITE);
-        draw.rect()
-            .xy(rs[3].xy())
-            .wh(rs[3].wh())
-            .color(WHITE);
+        draw.rect().xy(rs[0].xy()).wh(rs[0].wh()).color(BLACK);
+        draw.rect().xy(rs[2].xy()).wh(rs[2].wh()).color(BLACK);
+        draw.rect().xy(rs[1].xy()).wh(rs[1].wh()).color(WHITE);
+        draw.rect().xy(rs[3].xy()).wh(rs[3].wh()).color(WHITE);
     }
     draw.to_frame(_app, &_frame).unwrap();
 }
